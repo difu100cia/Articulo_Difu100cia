@@ -1,0 +1,218 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wenneker Article
+% Structure Specification File
+% Version 1.0 (28/2/17)
+%
+% This file originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Frits Wenneker
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\LoadClass[twocolumn]{article} %clase para articulos
+\usepackage[spanish, mexico]{babel} % Spanish language hyphenation
+%\usepackage[english]{babel} % English language hyphenation
+\usepackage{authblk} %Mutiple autores
+\usepackage{abstract}
+\usepackage{microtype} % Better typography
+\usepackage{url}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages for equations
+\usepackage{multicol}
+\usepackage[svgnames]{xcolor} % Enabling colors by their 'svgnames'
+
+\usepackage[hang, small, labelfont=bf, up, textfont=it]{caption} % Custom captions under/above tables and figures
+
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{lastpage} % Used to determine the number of pages in the document (for "Page X of Total")
+
+\usepackage{graphicx} % Required for adding images
+
+\usepackage{enumitem} % Required for customising lists
+\setlist{noitemsep} % Remove spacing between bullet/numbered list elements
+
+\usepackage{sectsty} % Enables custom section titles
+\allsectionsfont{\usefont{OT1}{phv}{b}{n}} % Change the font of all section commands (Helvetica)
+
+\graphicspath{{Figuras/}}
+
+%----------------------------------------------------------------------------------------
+%	MARGINS AND SPACING
+%----------------------------------------------------------------------------------------
+
+\usepackage{geometry} % Required for adjusting page dimensions
+
+ \geometry{
+ 	top=1cm, % Top margin
+ 	bottom=1.5cm, % Bottom margin
+ 	left=2cm, % Left margin
+ 	right=2cm, % Right margin
+ 	includehead, % Include space for a header
+ 	includefoot, % Include space for a footer
+ 	%showframe, % Uncomment to show how the type block is set on the page
+ }
+
+ \setlength{\columnsep}{7mm} % Column separation width
+
+%----------------------------------------------------------------------------------------
+%	FONTS
+%----------------------------------------------------------------------------------------
+
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+
+\usepackage{XCharter} % Use the XCharter font
+
+%----------------------------------------------------------------------------------------
+%	HEADERS AND FOOTERS
+%----------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr} % Needed to define custom headers/footers
+\pagestyle{fancy} % Enables the custom headers/footers
+
+\renewcommand{\headrulewidth}{0.4pt} % Linea delgada en cabecera
+\renewcommand{\footrulewidth}{0.4pt} % Thin footer rule
+
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}} % Removes the section number from the header when \leftmark is used
+
+%\nouppercase\leftmark % Add this to one of the lines below if you want a section title in the header/footer
+
+% Headers
+\lhead{\footnotesize \sffamily $\boldsymbol{\mathcal{DIFU}_{100}ci@}$ \textbf{Vol. 14, No. 1, Enero - Abril 2020}} % Left header
+\chead{} % Center header
+\rhead{\footnotesize \sffamily \textbf{ISSN:2007-3585}} % Right header
+
+% Footers
+\lfoot{} % Left footer
+\cfoot{} % Center footer
+\rfoot{} % Right footer, "Page 1 of 2"
+
+\fancypagestyle{firstpage}{ % Page style for the first page with the title
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0.0pt} % No header rule
+	\renewcommand{\footrulewidth}{0.0pt} % Suppress footer rule
+}
+
+%----------------------------------------------------------------------------------------
+%	PALABRAS CLAVE
+%----------------------------------------------------------------------------------------
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{\keywordsname---}} #1
+}
+
+\addto\captionsenglish{\def\keywordsname{Keywords}}
+\addto\captionsspanish{\def\keywordsname{Palabras clave}}
+
+%----------------------------------------------------------------------------------------
+%	VARIOS AUTORES
+%----------------------------------------------------------------------------------------
+
+\addto\captionsspanish{\def\Authands{ y }}
+\addto\captionsspanish{\def\Authsep{, }}
+\addto\captionsspanish{\def\Authand{ y }}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\authorstyle}[1]{{\normalsize\usefont{OT1}{phv}{b}{n}\color{MidnightBlue}#1}} % Authors style (Helvetica)
+
+\newcommand{\institution}[1]{{\footnotesize\usefont{OT1}{phv}{m}{sl}\color{Black}#1}} % Institutions style (Helvetica)
+
+%\usepackage{titling} % Allows custom title configuration
+
+\newcommand{\HorRule}{\color{DarkGoldenrod}\rule{\linewidth}{1pt}} % Defines the gold horizontal rule around the title
+
+\makeatletter  
+\renewcommand*\maketitle{%
+\twocolumn[
+    \centering
+    \begingroup
+  	\vspace{30pt} % Move the entire title section up
+  	\HorRule
+  	\vspace{10pt} % Horizontal rule before the title
+  	\fontsize{32}{36}
+  	\usefont{OT1}{phv}{b}{n}
+  	\selectfont % Helvetica
+  	\color{MidnightBlue} % Text colour for the title and author(s)
+    \@title    
+    \par
+    \vspace{15pt} 
+    \normalsize
+    \@author
+    \vspace{10pt} % Space before the rule
+  	\par
+  	\HorRule % Horizontal rule after the title
+  	\vspace{10pt}
+    \endgroup
+]
+\@thanks
+\global\let\thanks\relax
+\global\let\@thanks\@empty
+}
+\makeatother
+
+\date{}
+
+%----------------------------------------------------------------------------------------
+%	SECCION CORREOS
+%----------------------------------------------------------------------------------------
+\renewcommand{\thefootnote}{\alph{footnote}}
+%----------------------------------------------------------------------------------------
+%	TAMANO DE SECCION Y SUBSECCION
+%----------------------------------------------------------------------------------------
+
+\sectionfont{\fontsize{11}{10}\selectfont}
+\subsectionfont{\fontsize{10}{10}\selectfont}
+
+%----------------------------------------------------------------------------------------
+%	NUMERALES DE SECCION
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\thesection}{\Roman{section}} 
+
+%----------------------------------------------------------------------------------------
+%	SECCION
+%----------------------------------------------------------------------------------------
+
+\usepackage{lettrine} % Package to accentuate the first letter of the text (lettrine)
+\usepackage{fix-cm}	% Fixes the height of the lettrine
+
+\newcommand{\initial}[1]{ % Defines the command and style for the lettrine
+	\lettrine[lines=3,findent=4pt,nindent=0pt]{% Lettrine takes up 3 lines, the text to the right of it is indented 4pt and further indenting of lines 2+ is stopped
+		\color{MidnightBlue}% Lettrine colour
+		{#1}% The letter
+	}{}%
+}
+
+\usepackage{xstring} % Required for string manipulation
+
+\newcommand{\lettrinesection}[1]{
+	\StrLeft{#1}{1}[\firstletter] % Capture the first letter of the abstract for the lettrine
+	\initial{\firstletter}\StrGobbleLeft{#1}{1} % Print the abstract with the first letter as a lettrine
+}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
+%\bibliography{referencias} 
+
+\usepackage{biblatex}
+\usepackage{csquotes}
+
+\addbibresource{referencias.bib}
+
+%\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
