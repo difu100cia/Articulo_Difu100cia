@@ -36,7 +36,7 @@
 \usepackage{lastpage} % Used to determine the number of pages in the document (for "Page X of Total")
 
 \usepackage{graphicx} % Required for adding images
-
+\usepackage{subcaption}
 \usepackage{enumitem} % Required for customising lists
 \setlist{noitemsep} % Remove spacing between bullet/numbered list elements
 
@@ -210,7 +210,7 @@
 %\usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
 %\bibliography{referencias} 
 
-\usepackage{biblatex}
+\usepackage[sorting=none]{biblatex}
 \usepackage{csquotes}
 
 \addbibresource{referencias.bib}
