@@ -43,7 +43,14 @@
 \usepackage{sectsty} % Enables custom section titles
 \allsectionsfont{\usefont{OT1}{phv}{b}{n}} % Change the font of all section commands (Helvetica)
 
-\graphicspath{{Figuras/}}
+\usepackage{algorithmic,algorithm} %Agrega algoritmos
+\floatname{algorithm}{Algoritmo} % Cambia el titulo
+
+\graphicspath{{Figuras/}{Figures/}}
+
+\newcommand{\publishrange}[1]{\gdef\@publishrange{#1}}
+\newcommand{\volume}[1]{\gdef\@volume{#1}}
+\newcommand{\num}[1]{\gdef\@num{#1}}
 
 %----------------------------------------------------------------------------------------
 %	MARGINS AND SPACING
@@ -87,7 +94,7 @@
 %\nouppercase\leftmark % Add this to one of the lines below if you want a section title in the header/footer
 
 % Headers
-\lhead{\footnotesize \sffamily $\boldsymbol{\mathcal{DIFU}_{100}ci@}$ \textbf{Vol. 14, No. 1, Enero - Abril 2020}} % Left header
+\lhead{\footnotesize \sffamily $\boldsymbol{\mathcal{DIFU}_{100}ci@}$ \textbf{Vol. \@volume, No. \@num, \@publishrange }}% Left header
 \chead{} % Center header
 \rhead{\footnotesize \sffamily \textbf{ISSN:2007-3585}} % Right header
 
