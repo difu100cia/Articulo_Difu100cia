@@ -68,7 +68,7 @@
  	%showframe, % Uncomment to show how the type block is set on the page
  }
 
- \setlength{\columnsep}{7mm} % Column separation width
+ \setlength{\columnsep}{6mm} % Column separation width
 
 %----------------------------------------------------------------------------------------
 %	FONTS
@@ -149,7 +149,7 @@
   	\vspace{30pt} % Move the entire title section up
   	\HorRule
   	\vspace{10pt} % Horizontal rule before the title
-  	\fontsize{32}{36}
+  	\fontsize{20}{20}
   	\usefont{OT1}{phv}{b}{n}
   	\selectfont % Helvetica
   	\color{MidnightBlue} % Text colour for the title and author(s)
