@@ -36,9 +36,10 @@
 \setlist{noitemsep} % Remove spacing between bullet/numbered list elements
 \usepackage{sectsty} % Enables custom section titles
 \allsectionsfont{\usefont{OT1}{phv}{b}{n}} % Change the font of all section commands (Helvetica)
+\graphicspath{{Figuras/}{Figures/}}
 % \usepackage{algorithmic,algorithm} %Agrega algoritmos
 % \floatname{algorithm}{Algoritmo} % Cambia el titulo
-\graphicspath{{Figuras/}{Figures/}}
+
 
 %----------------------------------------------------------------------------------------
 %	DATOS DE PUBLICACION
@@ -90,14 +91,14 @@
 %\nouppercase\leftmark % Add this to one of the lines below if you want a section title in the header/footer
 
 % Headers
-\lhead{\footnotesize \sffamily $\boldsymbol{\mathcal{DIFU}_{100}ci@}$ \textbf{Vol. \@volume, No. \@num, \@publishrange }}% Left header
+\lhead{\footnotesize \sffamily \textbf{\@title}}% Left header
 \chead{} % Center header
-\rhead{\footnotesize \sffamily \textbf{ISSN:2007-3585}} % Right header
+\rhead{} % Right header
 
 % Footers
-\lfoot{} % Left footer
+\lfoot{\footnotesize \sffamily $\boldsymbol{\mathcal{DIFU}_{100}ci@}$ \textbf{Vol. \@volume, No. \@num, \@publishrange }} % Left footer
 \cfoot{} % Center footer
-\rfoot{} % Right footer, "Page 1 of 2"
+\rfoot{\footnotesize \sffamily \textbf{ISSN:2007-3585}} % Right footer, "Page 1 of 2"
 
 \fancypagestyle{firstpage}{ % Page style for the first page with the title
 	\fancyhf{}
@@ -177,7 +178,7 @@
     \vspace{4pt} % Space before the rule
   	\par
   	\HorRule % Horizontal rule after the title
-  	\vspace{5pt}
+  	\vspace{10pt}
     \endgroup
 ]
 \@thanks
