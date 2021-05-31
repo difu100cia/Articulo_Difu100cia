@@ -19,8 +19,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 \LoadClass[twocolumn]{article} %clase para articulos
-\usepackage[spanish, mexico]{babel} % Spanish language hyphenation
-%\usepackage[english]{babel} % English language hyphenation
+\usepackage[english,spanish,mexico]{babel}
 \usepackage{authblk} %Mutiple autores
 \usepackage{abstract}
 \usepackage{microtype} % Better typography
@@ -28,25 +27,22 @@
 \usepackage{amsmath,amsfonts,amsthm} % Math packages for equations
 \usepackage{multicol}
 \usepackage[svgnames]{xcolor} % Enabling colors by their 'svgnames'
-
 \usepackage[hang, small, labelfont=bf, up, textfont=it]{caption} % Custom captions under/above tables and figures
-
 \usepackage{booktabs} % Horizontal rules in tables
-
 \usepackage{lastpage} % Used to determine the number of pages in the document (for "Page X of Total")
-
 \usepackage{graphicx} % Required for adding images
 \usepackage{subcaption}
 \usepackage{enumitem} % Required for customising lists
 \setlist{noitemsep} % Remove spacing between bullet/numbered list elements
-
 \usepackage{sectsty} % Enables custom section titles
 \allsectionsfont{\usefont{OT1}{phv}{b}{n}} % Change the font of all section commands (Helvetica)
-
-\usepackage{algorithmic,algorithm} %Agrega algoritmos
-\floatname{algorithm}{Algoritmo} % Cambia el titulo
-
+% \usepackage{algorithmic,algorithm} %Agrega algoritmos
+% \floatname{algorithm}{Algoritmo} % Cambia el titulo
 \graphicspath{{Figuras/}{Figures/}}
+
+%----------------------------------------------------------------------------------------
+%	DATOS DE PUBLICACION
+%----------------------------------------------------------------------------------------
 
 \newcommand{\publishrange}[1]{\gdef\@publishrange{#1}}
 \newcommand{\volume}[1]{\gdef\@volume{#1}}
@@ -110,34 +106,52 @@
 }
 
 %----------------------------------------------------------------------------------------
-%	PALABRAS CLAVE
+%	ABSTRACT AND KEYWORDS MULTIPLE LANGUAGE
 %----------------------------------------------------------------------------------------
-\providecommand{\keywords}[1]
-{
-  \small	
-  \textbf{\textit{\keywordsname---}} #1
+\providecommand{\keywordsname}{Keywords}
+\addto\captionsenglish{\renewcommand{\keywordsname}{Keywords}}
+\addto\captionsspanish{\renewcommand{\keywordsname}{Palabras clave}}
+
+\newif\ifotherlanguage
+
+% Abstract
+\renewenvironment{abstract}[1][]
+ {%
+  \if\relax\detokenize{#1}\relax\else
+    \otherlanguagetrue
+    \begin{otherlanguage}{#1}%
+  \fi
+  \begin{quotation}
+  {\bfseries\centering\abstractname\par}
+  \vspace{\dimexpr-\baselineskip+1mm+2pt}
+  \medskip
+ }
+ {%
+  \par
+  \end{quotation}%
+  \ifotherlanguage
+    \end{otherlanguage}
+  \fi
+ }
+
+% Keywords command
+
+\providecommand{\keywords}{}
+\renewcommand{\keywords}[2][]{%
+  \par
+  \if\relax\detokenize{#1}\relax\else\begin{otherlanguage}{#1}\fi
+  \small
+  \textbf{\textit{\keywordsname---}} #2\par
+  \if\relax\detokenize{#1}\relax\else\end{otherlanguage}\fi
 }
-
-\addto\captionsenglish{\def\keywordsname{Keywords}}
-\addto\captionsspanish{\def\keywordsname{Palabras clave}}
-
-%----------------------------------------------------------------------------------------
-%	VARIOS AUTORES
-%----------------------------------------------------------------------------------------
-
-\addto\captionsspanish{\def\Authands{ y }}
-\addto\captionsspanish{\def\Authsep{, }}
-\addto\captionsspanish{\def\Authand{ y }}
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
-
+\newcommand{\subtitle}[1]{{\gdef\@subtitle{\Large #1}}}
 \newcommand{\authorstyle}[1]{{\normalsize\usefont{OT1}{phv}{b}{n}\color{MidnightBlue}#1}} % Authors style (Helvetica)
 
 \newcommand{\institution}[1]{{\footnotesize\usefont{OT1}{phv}{m}{sl}\color{Black}#1}} % Institutions style (Helvetica)
-
-%\usepackage{titling} % Allows custom title configuration
 
 \newcommand{\HorRule}{\color{DarkGoldenrod}\rule{\linewidth}{1pt}} % Defines the gold horizontal rule around the title
 
@@ -154,6 +168,8 @@
   	\selectfont % Helvetica
   	\color{MidnightBlue} % Text colour for the title and author(s)
     \@title    
+    \par
+    \@subtitle
     \par
     \vspace{15pt} 
     \normalsize

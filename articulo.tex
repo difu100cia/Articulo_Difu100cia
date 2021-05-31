@@ -8,16 +8,12 @@
 
 \documentclass[12pt, letterpaper]{difu100cia} % clase difu100cia
 
-%Para cambiar de idioma, este se realiza comentando una de las siguientes líneas en difu100cia.cls
-%\usepackage[spanish, mexico]{babel} % Spanish language hyphenation
-%\usepackage[english]{babel} % English language hyphenation
-
 %----------------------------------------------------------------------------------------
 %	INFORMACION DEL ARTICULO
 %----------------------------------------------------------------------------------------
 
-\title{Análisis de desempeño de un filtro FIR en RFNoC} % Titulo del articulo
-
+\title{Performance analysis of a FIR filter in RFNoC} % Titulo del articulo en ingles
+\subtitle{Análisis de desempeño de un filtro FIR en RFNoC} % Titulo del articulo en espanol
 % Autores
 \author[1]{\authorstyle{Grecia Montoya-Zúñiga}\thanks{Gracias al programa de Apoyo a la Incorporación de NPTC en el proyecto denominado ``Implementación de aceleradores de hardware a través de RFNoC en radio definido por software'' por la beca de tesis.}}
 \author[1]{\authorstyle{Víktor I. Rodríguez-Abdalá}}
@@ -39,6 +35,9 @@
 
 \begin{document}
 
+\selectlanguage{spanish} % selecciona espanol como idioma
+%\selectlanguage{english} % Selecciona ingles como idioma
+
 \maketitle % Imprime el titulo
 
 \thispagestyle{firstpage} % Aplica el estilo en la primera pagina sin cabeceras y pie de pagina
@@ -47,12 +46,17 @@
 %	RESUMEN
 %----------------------------------------------------------------------------------------
 
-\begin{abstract}
+\begin{abstract}[english]
+The hardware accelerators development in software-defined radio ecosystems, allow increasing the samples per second processing capacity of wireless communication systems, tools such as RFNoC enable the FPGA to perform electronic designs in a distributed network in USRP devices, in this way, these signal processing blocks are seamlessly integrated into the GNU Radio flow diagram with the advantage of hardware processing. Processes such as signal filtering are well known for their high computational load, so their implementation in hardware means less processes performed by the general-purpose computer as well as a better use of the FPGA, which is underused in USRP devices.
+\end{abstract}
+
+\keywords[english]{GNU Radio, RFNoC, FIR}
+
+\begin{abstract}[spanish]
 La implementación de aceleradores de hardware en ecosistemas de radio definido por software, permiten aumentar la capacidad de procesamiento de muestras por segundo de los sistemas de comunicaciones inalámbricos, herramientas como RFNoC habilita el FPGA para implementar diseños electrónicos en una red distribuida en los dispositivos USRP, de este modo, estos bloques de procesamiento de señales se integran de forma transparente al diagrama de flujo de GNU Radio con la ventaja que implica el procesamiento en hardware. Procesos como el filtrado de señales son bien conocidos por su alta carga computacional, por lo que su implementación en hardware significa una descarga de procesos en la computadora de propósito general así como el aprovechamiento del FPGA es cual es subutilizado en los dispositivos USRP.
 \end{abstract}
 
-\keywords{GNU Radio, RFNoC, FIR}
-
+\keywords[spanish]{GNU Radio, RFNoC, FIR}
 
 %----------------------------------------------------------------------------------------
 %	ARTICULO
