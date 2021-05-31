@@ -123,7 +123,7 @@
   \fi
   \begin{quotation}
   {\bfseries\centering\abstractname\par}
-  \vspace{\dimexpr-\baselineskip+1mm+2pt}
+  \vspace{\dimexpr-\baselineskip+9pt}
   \medskip
  }
  {%
@@ -160,7 +160,7 @@
 \twocolumn[
     \centering
     \begingroup
-  	\vspace{30pt} % Move the entire title section up
+  	\vspace{25pt} % Move the entire title section up
   	\HorRule
   	\vspace{10pt} % Horizontal rule before the title
   	\fontsize{20}{20}
@@ -174,10 +174,10 @@
     \vspace{15pt} 
     \normalsize
     \@author
-    \vspace{10pt} % Space before the rule
+    \vspace{4pt} % Space before the rule
   	\par
   	\HorRule % Horizontal rule after the title
-  	\vspace{10pt}
+  	\vspace{5pt}
     \endgroup
 ]
 \@thanks
