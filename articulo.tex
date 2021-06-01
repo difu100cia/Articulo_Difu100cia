@@ -6,7 +6,7 @@
 %	PAQUETES Y DOCUMENTOS DE CONFIGURACION
 %----------------------------------------------------------------------------------------
 
-\documentclass[12pt, letterpaper]{difu100cia} % clase difu100cia
+\documentclass[12pt]{difu100cia} % clase difu100cia
 
 %----------------------------------------------------------------------------------------
 %	INFORMACION DEL ARTICULO
@@ -15,8 +15,8 @@
 \title{Performance analysis of a FIR filter in RFNoC} % Titulo del articulo en ingles
 \subtitle{Análisis de desempeño de un filtro FIR en RFNoC} % Titulo del articulo en espanol
 % Autores
-\author[1]{\authorstyle{Grecia Montoya-Zúñiga}\thanks{Gracias al programa de Apoyo a la Incorporación de NPTC en el proyecto denominado ``Implementación de aceleradores de hardware a través de RFNoC en radio definido por software'' por la beca de tesis.}}
-\author[1]{\authorstyle{Víktor I. Rodríguez-Abdalá}}
+\author[1]{\authorstyle{Grecia Montoya-Zúñiga}}
+\author[1]{\authorstyle{Víktor I. Rodríguez-Abdalá}\thanks{Autor de correspondencia}}
 \author[1]{\authorstyle{Salvador Ibarra-Delgado}}
 \author[1]{\authorstyle{Remberto Sandoval-Aréchiga}}
 \author[1]{\authorstyle{Jorge Flores-Troncoso}}
@@ -38,10 +38,9 @@
 
 \selectlanguage{spanish} % selecciona espanol como idioma
 %\selectlanguage{english} % Selecciona ingles como idioma
-
-\maketitle % Imprime el titulo
-
 \thispagestyle{firstpage} % Aplica el estilo en la primera pagina sin cabeceras y pie de pagina
+\maketitle % Imprime el titulo
+\pagestyle{fancy}
 
 %----------------------------------------------------------------------------------------
 %	RESUMEN
@@ -317,6 +316,11 @@ Los resultados obtenidos se muestran en la Tabla \ref{tabla_mues_max}, como se e
 Los resultados obtenidos en la implementación de los filtros FIR en diferentes lenguajes de software y en hardware, permitió determinar la factibilidad de desarrollar sistemas de radio definido por software en conjunto con FPGAs a nivel de prototipo. Así mismo se puede realizar una clasificación de bloques de procesamiento de señales, donde dependiendo de la capacidad de procesamiento estos sean realizados en hardware o software, e incluso determinar si este puede ser escrito en otro tipo de lenguaje de software de acuerdo a su importancia.
 
 La desventaja principal en el desarrollo de bloques de procesamiento de radio definido por software en hardware, es el tiempo de desarrollo y el nivel de conocimiento tanto de diseño electrónico como de software de parte del desarrollador. Lenguajes de software como Python permiten la implementación de bloques de procesamiento en tiempos menores, lo que es útil para pruebas de concepto en el desarrollo de prototipos, una vez comprobado el correcto funcionamiento de este, se puede realizar la implementación en hardware en la plataforma de radio definido por software, lo que implicaría solamente sustituir un bloque de procesamiento por otro, sin modificar todo el sistema desarrollado en radio definido por software.
+
+\section*{Agradecimientos}
+\label{agradecimientos}
+
+Gracias al programa de Apoyo a la Incorporación de NPTC en el proyecto denominado ``Implementación de aceleradores de hardware a través de RFNoC en radio definido por software'' por la beca de tesis.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCIAS

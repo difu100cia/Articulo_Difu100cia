@@ -1,3 +1,4 @@
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Wenneker Article
 % Structure Specification File
@@ -56,6 +57,7 @@
 \usepackage{geometry} % Required for adjusting page dimensions
 
  \geometry{
+    letterpaper,
  	top=1cm, % Top margin
  	bottom=1.5cm, % Bottom margin
  	left=2cm, % Left margin
@@ -82,7 +84,6 @@
 
 \usepackage{fancyhdr} % Needed to define custom headers/footers
 \pagestyle{fancy} % Enables the custom headers/footers
-
 \renewcommand{\headrulewidth}{0.4pt} % Linea delgada en cabecera
 \renewcommand{\footrulewidth}{0.4pt} % Thin footer rule
 
@@ -104,6 +105,11 @@
 	\fancyhf{}
 	\renewcommand{\headrulewidth}{0.0pt} % No header rule
 	\renewcommand{\footrulewidth}{0.0pt} % Suppress footer rule
+	\setlength{\headheight}{90pt}
+	\setlength{\topmargin}{-60pt}
+	\setlength{\headsep}{-15pt}
+	\rhead{\includegraphics[width=.25\textwidth]{difu100cia.jpg}} % Right header
+	\lhead{\footnotesize \sffamily $\boldsymbol{\mathcal{DIFU}_{100}ci@}$\\ Revista de Difusión Científica, Ingeniería y Teconologías \\ Vol. \@volume, No. \@num \\ \@publishrange \\ ISSN:2007-3585 \\ Artículo arbitrado}% Left header
 }
 
 %----------------------------------------------------------------------------------------
@@ -155,9 +161,9 @@
 \newcommand{\institution}[1]{{\footnotesize\usefont{OT1}{phv}{m}{sl}\color{Black}#1}} % Institutions style (Helvetica)
 
 \newcommand{\HorRule}{\color{DarkGoldenrod}\rule{\linewidth}{1pt}} % Defines the gold horizontal rule around the title
-
 \makeatletter  
 \renewcommand*\maketitle{%
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 \twocolumn[
     \centering
     \begingroup
@@ -178,11 +184,11 @@
     \vspace{4pt} % Space before the rule
   	\par
   	\HorRule % Horizontal rule after the title
-  	\vspace{10pt}
+  	\vspace{7pt}
     \endgroup
 ]
 \@thanks
-\global\let\thanks\relax
+\global\let\@thanks\relax
 \global\let\@thanks\@empty
 }
 \makeatother
