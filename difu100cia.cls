@@ -49,6 +49,10 @@
 \newcommand{\publishrange}[1]{\gdef\@publishrange{#1}}
 \newcommand{\volume}[1]{\gdef\@volume{#1}}
 \newcommand{\num}[1]{\gdef\@num{#1}}
+\newcommand{\received}[1]{\gdef\@received{#1}}
+\newcommand{\reviewed}[1]{\gdef\@reviewed{#1}}
+\newcommand{\accepted}[1]{\gdef\@accepted{#1}}
+\newcommand{\published}[1]{\gdef\@published{#1}}
 
 %----------------------------------------------------------------------------------------
 %	MARGINS AND SPACING
@@ -109,7 +113,7 @@
 	\setlength{\topmargin}{-60pt}
 	\setlength{\headsep}{-15pt}
 	\rhead{\includegraphics[width=.25\textwidth]{difu100cia.jpg}} % Right header
-	\lhead{\footnotesize \sffamily $\boldsymbol{\mathcal{DIFU}_{100}ci@}$\\ Revista de Difusión Científica, Ingeniería y Teconologías \\ Vol. \@volume, No. \@num \\ \@publishrange \\ ISSN:2007-3585 \\ Artículo arbitrado}% Left header
+	\lhead{\footnotesize \sffamily $\boldsymbol{\mathcal{DIFU}_{100}ci@}$\\ Revista de Difusión Científica, Ingeniería y Teconologías \\ Vol. \@volume, No. \@num,  \@publishrange \\ ISSN:2007-3585 \\ Artículo arbitrado \\ Información del artículo: Publicado: \@published}% Left header
 }
 
 %----------------------------------------------------------------------------------------
