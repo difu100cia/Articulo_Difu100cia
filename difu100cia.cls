@@ -38,6 +38,11 @@
 \usepackage{sectsty} % Enables custom section titles
 \allsectionsfont{\usefont{OT1}{phv}{b}{n}} % Change the font of all section commands (Helvetica)
 \graphicspath{{Figuras/}{Figures/}}
+\usepackage{ragged2e}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{threeparttable}
 % \usepackage{algorithmic,algorithm} %Agrega algoritmos
 % \floatname{algorithm}{Algoritmo} % Cambia el titulo
 
@@ -117,21 +122,29 @@
 }
 
 %----------------------------------------------------------------------------------------
+%	CODE LISTING
+%----------------------------------------------------------------------------------------
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+%----------------------------------------------------------------------------------------
 %	ABSTRACT AND KEYWORDS MULTIPLE LANGUAGE
 %----------------------------------------------------------------------------------------
+% Keywords command
 \providecommand{\keywordsname}{Keywords}
 \addto\captionsenglish{\renewcommand{\keywordsname}{Keywords}}
 \addto\captionsspanish{\renewcommand{\keywordsname}{Palabras clave}}
-
 \newif\ifotherlanguage
-
 % Abstract
 \renewenvironment{abstract}[1][]
  {%
-  \if\relax\detokenize{#1}\relax\else
-    \otherlanguagetrue
-    \begin{otherlanguage}{#1}%
-  \fi
+  \justifying
+  \normalsize
   \begin{quotation}
   {\bfseries\centering\abstractname\par}
   \vspace{\dimexpr-\baselineskip+9pt}
@@ -139,19 +152,15 @@
  }
  {%
   \par
-  \end{quotation}%
-  \ifotherlanguage
-    \end{otherlanguage}
-  \fi
+  \end{quotation}
  }
-
-% Keywords command
-
+%Keywords
 \providecommand{\keywords}{}
 \renewcommand{\keywords}[2][]{%
   \par
   \if\relax\detokenize{#1}\relax\else\begin{otherlanguage}{#1}\fi
   \small
+  \raggedright
   \textbf{\textit{\keywordsname---}} #2\par
   \if\relax\detokenize{#1}\relax\else\end{otherlanguage}\fi
 }
@@ -168,7 +177,6 @@
 \makeatletter  
 \renewcommand*\maketitle{%
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-\twocolumn[
     \centering
     \begingroup
   	\vspace{25pt} % Move the entire title section up
@@ -178,7 +186,7 @@
   	\usefont{OT1}{phv}{b}{n}
   	\selectfont % Helvetica
   	\color{MidnightBlue} % Text colour for the title and author(s)
-    \@title    
+     \@title    
     \par
     \vspace{15pt}     
     \@subtitle
@@ -189,9 +197,8 @@
     \vspace{4pt} % Space before the rule
   	\par
   	\HorRule % Horizontal rule after the title
-  	\vspace{7pt}
-    \endgroup
-]
+  	\vspace{-5pt}
+   \endgroup 
 \@thanks
 \global\let\@thanks\relax
 \global\let\@thanks\@empty
