@@ -25,6 +25,7 @@
 \usepackage{abstract}
 \usepackage{microtype} % Better typography
 \usepackage{url}
+\usepackage[hidelinks]{hyperref}
 \usepackage{amsmath,amsfonts,amsthm} % Math packages for equations
 \usepackage{multicol}
 \usepackage[svgnames]{xcolor} % Enabling colors by their 'svgnames'
@@ -43,6 +44,7 @@
 \usepackage{array}
 \usepackage{multirow}
 \usepackage{threeparttable}
+\usepackage{orcidlink}
 % \usepackage{algorithmic,algorithm} %Agrega algoritmos
 % \floatname{algorithm}{Algoritmo} % Cambia el titulo
 
